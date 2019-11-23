@@ -56,16 +56,4 @@ public class Log {
 
     public Log() {
     }
-
-    @Override
-    public String toString() {
-        return "Log{" +
-                "id=" + id +
-                ", userId='" + userId + '\'' +
-                ", sessionId='" + sessionId + '\'' +
-                ", action 1=" + actions.get(0).toString() +
-                ", action 2=" + actions.get(1).toString() +
-                ", action 3=" + actions.get(2).toString() +
-        '}';
-    }
 }

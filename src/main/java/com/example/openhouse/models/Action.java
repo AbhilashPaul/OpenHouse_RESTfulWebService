@@ -1,7 +1,5 @@
 package com.example.openhouse.models;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -11,18 +9,21 @@ public class Action {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="action_id")
+    @Column(name="id")
     private long id;
 
     @Column(nullable=false, name="time")
     private Date time;
 
-    @Column(name="type")
+    @Column(name="type", nullable=false)
     private String type;
 
-    /*@ManyToOne
-    @JoinColumn(name="log_id")
-    private Log log;*/
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "property_id")
+    private Property properties;
+
+    @ManyToOne
+    private Log log;
 
     public long getId() { return id; }
 
@@ -34,30 +35,18 @@ public class Action {
 
     public String getType() { return type; }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+    public void setType(String type) { this.type = type; }
 
-//    public Log getLog() { return log; }
-//
-//    public void setLog(Log log) { this.log = log; }
+    public Property getProperties() { return properties; }
 
-    public Action(Date time, String type, Log log) {
+    public void setProperty(Property property) { this.properties = property; }
+
+    public Action(Date time, String type, Property property) {
         this.time = time;
         this.type = type;
-       // this.log = log;
+        this.properties = property;
     }
 
     public Action() {
-    }
-
-    @Override
-    public String toString() {
-        return "Action{" +
-                "id=" + id +
-                ", time=" + time +
-                ", type='" + type + '\'' +
-                //", log_id=" + log +
-                '}';
     }
 }
