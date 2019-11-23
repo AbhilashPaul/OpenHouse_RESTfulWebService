@@ -3,6 +3,12 @@ package com.example.openhouse.models;
 import javax.persistence.*;
 import java.util.Date;
 
+/*
+  Action Entity Class
+  Author: Abhilash Paul
+  Date: 22 Nov 2019
+*/
+
 @Entity
 @Table(name="Actions")
 public class Action {

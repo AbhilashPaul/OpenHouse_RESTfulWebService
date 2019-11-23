@@ -4,6 +4,12 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+  Log Entity Class
+  Author: Abhilash Paul
+  Date: 22 Nov 2019
+*/
+
 @Entity
 @Table(name="Logs")
 public class Log {

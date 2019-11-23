@@ -2,6 +2,13 @@ package com.example.openhouse.models;
 
 import javax.persistence.*;
 
+/*
+  Property Entity Class
+  Used for storing action properties
+  Author: Abhilash Paul
+  Date: 22 Nov 2019
+*/
+
 @Entity
 @Table(name="Properties")
 public class Property {
