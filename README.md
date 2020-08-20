@@ -8,4 +8,7 @@ At the moment, WebService provides endpoints to retrieve all the logs and logs b
 Thoughts on cloud scalability
   - Scale horizontally: For scalability, deploy the application on the cloud using services such as Amazon EC2 which provides means to scale horizontally.
   - Backend databases can be hosted by Amazon RDS, DynamoDB or Heroku Postgres.
-  - Strive to keep the service oriented architecture of the app. 
+  - Strive to keep the service oriented architecture of the app.
+  
+  
+  Testing Git
